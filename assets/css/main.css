@@ -3575,13 +3575,17 @@
 		max-width: 45em;
 	}
 
+		#cta .inner h2{
+			text-align: center;
+			display: block;
+			}
+
 		#cta .inner header {
 			-moz-order: 1;
 			-webkit-order: 1;
 			-ms-order: 1;
 			order: 1;
 			padding-right: 3em;
-			width: 70%;
 		}
 
 			#cta .inner header p {
