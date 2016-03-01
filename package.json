@@ -1,0 +1,25 @@
+{
+  "name": "barriounistatic",
+  "version": "1.0.0",
+  "description": "Barrio Uno Website",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FacuDelgado/BarrioUnoStatic.git"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "startmon": "nodemon server.js"
+  },
+  "author": "Facundo Delgado",
+  "homepage": "https://github.com/FacuDelgado/BarrioUnoStatic#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "nodemon": "^1.9.1"
+  },
+  "engines": {
+    "node": "0.8.4",
+    "npm": "1.1.49"
+  }
+}
