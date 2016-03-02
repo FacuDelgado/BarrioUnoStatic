@@ -8,8 +8,9 @@
     "url": "git+https://github.com/FacuDelgado/BarrioUnoStatic.git"
   },
   "scripts": {
-    "start": "node server.js",
-    "startmon": "nodemon server.js"
+    "start": "node app.js",
+    "monitor": "nodemon app.js",
+    "deploy": "gcloud preview app deploy app.yaml"
   },
   "author": "Facundo Delgado",
   "homepage": "https://github.com/FacuDelgado/BarrioUnoStatic#readme",
@@ -19,7 +20,6 @@
     "nodemon": "^1.9.1"
   },
   "engines": {
-    "node": "0.8.4",
-    "npm": "1.1.49"
+    "node": ">=0.12.7"
   }
 }
