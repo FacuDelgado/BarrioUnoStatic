@@ -4,22 +4,10 @@ var express = require('express');
 var expressHandlebars = require('express-handlebars');
 var http = require('http');
 
-// var addController = require('./controllers/add');
 var homeController = require('./controllers/home');
-// var reviewController = require('./controllers/review');
 
 var app = express();
-var port = process.env.PORT || 3000;
-
-
-// var db = require('./libs/dbConnection.js');
-
-// db.init(function onError(error) {
-//     console.log(error);
-// }, 
-//     function onSuccess() {
-//     console.log("Db connection OK!");
-// });
+var port = process.env.PORT || 8080;
 
 
 
