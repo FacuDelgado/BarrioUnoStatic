@@ -5,6 +5,7 @@ var expressHandlebars = require('express-handlebars');
 var http = require('http');
 
 var homeController = require('./controllers/home');
+var previewController = require('./controllers/preview');
 
 var app = express();
 var port = process.env.PORT || 8080;
@@ -19,6 +20,7 @@ app.engine('.hbs', expressHandlebars({
 app.set('view engine', '.hbs');
 
 app.use('/', homeController);
+app.use('/preview', previewController);
 // app.use('/add', addController);
 // app.use('/review', reviewController);
 
