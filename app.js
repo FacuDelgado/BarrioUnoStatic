@@ -1,15 +1,18 @@
 'use strict';
+require('dotenv').load();
 
 var express = require('express');
 var expressHandlebars = require('express-handlebars');
 var http = require('http');
 
 var homeController = require('./controllers/home');
-var previewController = require('./controllers/preview');
+var aboutUsController = require('./controllers/about-us');
+var activitiesController = require('./controllers/activities');
+var sendEmailController = require('./controllers/sendEmail');
 
 var app = express();
 var port = process.env.PORT || 8080;
-
+app.locals.isHome = true;
 
 
 app.engine('.hbs', expressHandlebars({
@@ -20,9 +23,10 @@ app.engine('.hbs', expressHandlebars({
 app.set('view engine', '.hbs');
 
 app.use('/', homeController);
-app.use('/preview', previewController);
-// app.use('/add', addController);
-// app.use('/review', reviewController);
+app.use('/about-us', aboutUsController);
+app.use('/activities', activitiesController);
+app.use('/sendEmail', sendEmailController);
+
 
 app.use('/public', express.static(__dirname + '/public'));
 

@@ -15,8 +15,11 @@
   "author": "Facundo Delgado",
   "homepage": "https://github.com/FacuDelgado/BarrioUnoStatic#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
+    "nodemailer": "^2.3.0",
     "nodemon": "^1.9.1"
   },
   "engines": {

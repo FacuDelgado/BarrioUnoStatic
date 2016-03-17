@@ -3816,3 +3816,9 @@
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+	/*global*/
+
+	a.readMore{
+		font-size: 1.4em;
+	}

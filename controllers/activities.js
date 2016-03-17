@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get('/', function (req, res) {
     
-     res.render('homeFull', {layout: false});
+     res.render('activities');
 });
 
 module.exports = router;
