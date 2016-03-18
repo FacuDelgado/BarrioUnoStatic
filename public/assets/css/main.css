@@ -1509,6 +1509,7 @@
 			h3 {
 				font-size: 1em;
 				line-height: 1.65em;
+				padding-top: 20px;
 			}
 
 		}
@@ -2957,7 +2958,7 @@
 		}
 
 		.wrapper.style5 {
-			background-color: #ffffff;
+			background-color: #F7F7F7;
 			color: #4E4852;
 		}
 
@@ -3783,10 +3784,10 @@
 /* Landing */
 
 	body.landing #page-wrapper {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../../images/banner.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../../images/banner.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../../images/banner.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../../images/banner.jpg");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -3799,7 +3800,7 @@
 	}
 
 	body.is-mobile.landing #page-wrapper {
-		background: none;
+		/*background: none;*/
 	}
 
 	body.is-mobile.landing #banner,
@@ -3817,8 +3818,38 @@
 		background-color: #1d242a;
 	}
 
+
 	/*global*/
 
 	a.readMore{
 		font-size: 1.4em;
 	}
+
+	div.boxAbout{
+		text-align: center;
+		display: inline-block;
+		width: 49%;
+		vertical-align: top;
+		height: 280px;
+	}
+
+	.scrollup {
+    text-align:center;
+    cursor:pointer;
+    vertical-align:middle;
+    width:39px;
+    height:39px;
+    border-radius:5px;
+    font-size:20px;
+    position:fixed;
+    bottom:30px;
+    right:20px;
+	border:1px solid #fff;
+    display:none;
+    background: #FECE1A;
+}
+.scrollup > a {
+    position:relative;
+    top:7px;
+    color:#fff;
+}

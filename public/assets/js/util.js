@@ -34,6 +34,28 @@
 
 	};
 
+
+
+	    /*
+    Function for scroliing to top
+    ************************************/
+            
+        //Display or hide scroll to top button 
+        $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut('fast');
+        }
+        });
+        
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 900);
+        return false;
+    });
+
 	/**
 	 * Panel-ify an element.
 	 * @param {object} userConfig User config.
