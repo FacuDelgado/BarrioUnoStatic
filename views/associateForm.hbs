@@ -1,0 +1,68 @@
+<section class="wrapper style5">
+    <div class="inner">
+    	<h3>Formulario de inscripcion:</h3>
+		<form method="post" action="/sendEmail">
+                <div class="row uniform">
+                    <div class="12u$">
+                        <input type="text" required name="familyName" id="familyName" value="" placeholder="Apellido familiar">
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                        <input type="text" required name="address" id="address" value="" placeholder="Direccion">
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                        <input type="text" required name="tel" id="tel" value="" placeholder="Telefono">
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                        <input type="email" required name="email" id="email" value="" placeholder="Email Familiar">
+                    </div>
+                    <div class="12u$">
+                    <h6>Integrantes:</h6>
+                    </div>
+                    <div class="12u$">
+                        <span>1ª integrante</span>
+                    </div>
+                    <div class="3u 12u$(xsmall)">
+                        <input type="text" required name="name1" id="name1" value="" placeholder="Nombre">
+                    </div>
+                    <div class="3u 12u$(xsmall)">
+                        <input type="text" required name="lastName1" id="lastName1" value="" placeholder="Apellido">
+                    </div>
+                    <div class="3u 12u$(xsmall)">
+                        <input type="text" required class="date" name="birth1" id="birth1" value="" placeholder="Fecha de nac.">
+                    </div>
+                    <div class="3u 12u$(xsmall)">
+                        <input type="text" required class="dni" name="dni1" id="dni1" value="" placeholder="Documento">
+                    </div>
+                    <div class="row uniform" id="newMembers">
+                        
+                    </div>
+                     <div class="12u$">
+                        <a href="#!" id="addMember">Agregar nuevo integrante +</a>
+                     </div>
+                     <div class="12u$">
+                        <ul class="actions">
+                            <li><input type="submit" value="Enviar" class="special"></li>
+
+                        </ul>
+                    </div>
+                    
+                </div>
+            </form>
+    </div>
+</section>
+<script type="text/javascript">
+jQuery(function($){
+    $( document ).ready(function() {
+       $(".date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+       $(".dni").mask("99.999.999",{placeholder:"99.999.999"});
+    });
+});
+   
+counter = 2;
+$("a#addMember").click(function(event){
+    event.preventDefault();
+    $("#newMembers").append("<div class='12u$'><span>"+counter+"ª integrante</span></div><div class='3u 12u$(xsmall)'><input type='text' required name='name"+counter+"'id='name"+counter+"'value='' placeholder='Nombre'></div><div class='3u 12u$(xsmall)'><input type='text'required name='lastName"+counter+"'id='lastName"+counter+"'value=''placeholder='Apellido'></div><div class='3u 12u$(xsmall)'><input type='text'required class='date'name='birth"+counter+"'id='birth"+counter+"'value=''placeholder='Fecha de nac.'></div><div class='3u 12u$(xsmall)'><input type='text'required class='dni'name='dni"+counter+"'id='dni"+counter+"'value=''placeholder='Documento'></div>");
+    counter++;
+});
+
+</script>
