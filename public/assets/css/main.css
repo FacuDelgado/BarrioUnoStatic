@@ -316,6 +316,13 @@
 
 	@media screen and (max-width: 1680px) {
 
+		#header img.mainLogo {
+		    width: 40px;
+		    left: 0.3em;
+		    position: absolute;
+			top: 0.3em;
+		}
+
 		.row > * {
 			padding: 0 0 0 1.5em;
 		}
@@ -960,6 +967,15 @@
 	}
 
 	@media screen and (max-width: 736px) {
+
+		#header .mainLogo {
+
+			display: none;
+		}
+
+		#header h1 {
+			left: 1.25em;
+		}
 
 		.row > * {
 			padding: 0 0 0 1.5em;
@@ -3271,11 +3287,17 @@
 			-ms-transition: opacity 0.2s ease;
 			transition: opacity 0.2s ease;
 			height: inherit;
-			left: 1.25em;
+			left: 3.25em;
 			line-height: inherit;
 			position: absolute;
 			top: 0;
 		}
+		@media screen and (max-width: 736px) {
+			#header h1 {
+				left: 1.25em;
+			}
+		}
+
 
 			#header h1 a {
 				border: 0;
@@ -3817,6 +3839,8 @@
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+
 
 
 	/*global*/
