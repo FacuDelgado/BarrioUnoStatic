@@ -83,10 +83,16 @@ jQuery(function($){
 counter = 2;
 $("a#addMember").click(function(event){
     event.preventDefault();
-    $("#newMembers").append("<div class='12u$'><span>"+counter+"ª integrante</span></div><div class='3u 12u$(xsmall)'><input type='text' required name='name"+counter+"'id='name"+counter+"'value='' placeholder='Nombre'></div><div class='3u 12u$(xsmall)'><input type='text'required name='lastName"+counter+"'id='lastName"+counter+"'value=''placeholder='Apellido'></div><div class='3u 12u$(xsmall)'><input type='text'required class='date'name='birth"+counter+"'id='birth"+counter+"'value=''placeholder='Fecha de nac.'></div><div class='3u 12u$(xsmall)'><input type='text'required class='dni'name='dni"+counter+"'id='dni"+counter+"'value=''placeholder='Documento'></div>");
-    counter++;
-    $(".date").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
-
+    if (counter < 8) {
+        $("#newMembers").append("<div class='row uniform newMember' style='display:none;'><div class='12u$'><span>"+counter+"ª integrante</span></div><div class='3u 12u$(xsmall)'><input type='text' required name='name"+counter+"'id='name"+counter+"'value='' placeholder='Nombre'></div><div class='3u 12u$(xsmall)'><input type='text'required name='lastName"+counter+"'id='lastName"+counter+"'value=''placeholder='Apellido'></div><div class='3u 12u$(xsmall)'><input type='text'required class='date'name='birth"+counter+"'id='birth"+counter+"'value=''placeholder='Fecha de nac.'></div><div class='3u 12u$(xsmall)'><input type='text'required class='dni'name='dni"+counter+"'id='dni"+counter+"'value=''placeholder='Documento'></div></div>")
+        $(".newMember").show('slow');
+        counter++;
+        $(".date").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+    }
+    else {
+        $("#addMember").hide();
+        alert('Numero de integrantes maximo');
+    }
 });
 
 </script>

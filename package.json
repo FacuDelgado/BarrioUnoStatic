@@ -20,7 +20,8 @@
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
     "nodemailer": "^2.3.0",
-    "nodemon": "^1.9.1"
+    "nodemon": "^1.9.1",
+    "mongoose": "4.3.1"
   },
   "engines": {
     "node": ">=0.12.7"
