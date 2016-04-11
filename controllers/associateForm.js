@@ -40,7 +40,15 @@ router.post('/', bodyParser.urlencoded({ extended: false }),
         var sociosModel = mongoose.model('socio', socioSchema);
 
         var socioInstance = new sociosModel();
-        socioInstance.familia = 'apellido Test';
+        socioInstance.familia = req.body.familyName;
+        socioInstance.direccion = req.body.address;
+        socioInstance.telefono1 = req.body.tel;
+        socioInstance.nombre1 = req.body.name1;
+        socioInstance.email1 = req.body.email;
+        socioInstance.birth1 = req.body.birth1;
+        socioInstance.dni1 = req.body.dni1;
+        
+
         socioInstance.save(function (err) {
           if (err) return handleError(err);
           console.log("grabamos el dato");
