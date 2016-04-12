@@ -12,7 +12,8 @@ var activitiesController = require('./controllers/activities');
 var sendEmailController = require('./controllers/sendEmail');
 var associateController = require('./controllers/associate');
 var associateConfirmController = require('./controllers/associateConfirm');
-
+var rentalsController = require('./controllers/rentals');
+var contactController = require('./controllers/contact');
 
 
 mongoose.connect(process.env.MONGOLAB_URI);	
@@ -39,6 +40,8 @@ app.use('/actividades', activitiesController);
 app.use('/sendEmail', sendEmailController);
 app.use('/asociate', associateController);
 app.use('/asociacion-correcta', associateConfirmController);
+app.use('/alquileres', rentalsController);
+app.use('/contacto', contactController);
 
 app.use('/public', express.static(__dirname + '/public'));
 

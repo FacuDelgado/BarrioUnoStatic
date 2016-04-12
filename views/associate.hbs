@@ -1,10 +1,10 @@
 <section class="wrapper style5">
     <div class="inner">
         
-        <h3>¿Porque asociarse?</h3>
-        <p>
+        <h2>¿Porque asociarse?</h2>
+        <blockquote>
         Ya que los unicos recursos con los que contara la SDF seran: <strong>Las cuotas de sus asociados</strong>, alquileres de servicios del predio, producto de rifas o eventos que brinde a la comunidad y/o donaciones, ayudas o subsidios que reciba.
-        </p>
+        </blockquote>
         <h3>¿Como asociarse?</h3>
 
         <strong>Via web</strong>
@@ -56,11 +56,11 @@
             Proximamente por MercadoPago.
 			</li>
 		</ul>
-
+        <hr>
         <br>
         <h2 id="formTitle">Formulario de inscripcion</h2>
 
-        <form method="post" id="form" action="/associateForm">
+        <form method="post" id="form" action="/asociate">
                 <div class="row uniform">
                     <div class="12u$">
                         <h6>Datos generales:</h6>
@@ -105,12 +105,12 @@
                         <h6>Seleccione categoria de socio:</h6>
                     </div>
                      <div class="12u$">
-                            <div class="select-wrapper" required>
+                            <div class="select-wrapper">
                                 <select name="tipoSocio" required id="tipoSocio">
                                     <option disabled selected value="">Tipo de socio</option>
-                                    <option value="1">Individual</option>
-                                    <option value="1">Grupo familiar</option>
-                                    <option value="1">Benefactor</option>
+                                    <option value="individual">Individual</option>
+                                    <option value="grupo familiar">Grupo familiar</option>
+                                    <option value="benefactor">Benefactor</option>
                                 </select>
                             </div>
                     </div>
@@ -136,7 +136,7 @@ counter = 2;
 $("a#addMember").click(function(event){
     event.preventDefault();
     if (counter < 9) {
-        $("#newMembers").append("<div class='row uniform newMember' style='display:none;'><div class='12u$'><em><span>"+counter+"ª integrante</span></em></div><div class='4u 12u$(xsmall)'><input type='text' required name='name"+counter+"'id='name"+counter+"'value='' placeholder='Nombre'></div><div class='4u 12u$(xsmall)'><input type='text'required name='lastName"+counter+"'id='lastName"+counter+"'value=''placeholder='Apellido'></div><div class='4u 12u$(xsmall)'><input type='text'required class='date'name='birth"+counter+"'id='birth"+counter+"'placeholder='Fecha de nac.'></div><div class='4u 12u$(xsmall)'><input type='text'required class='dni'name='dni"+counter+"'id='dni"+counter+"'value=''placeholder='Documento'></div><div class='4u 12u$(xsmall)'><input type='text'required name='tel"+counter+"'id='tel"+counter+"'value=''placeholder='Telefono'></div><div class='4u 12u$(xsmall)'><input type='email'required name='email"+counter+"'id='email"+counter+"'value=''placeholder='Email'></div></div>")
+        $("#newMembers").append("<div class='row uniform newMember' style='display:none;'><div class='12u$'><em><span>"+counter+"ª integrante</span></em></div><div class='4u 12u$(xsmall)'><input type='text' required name='name"+counter+"'id='name"+counter+"'value='' placeholder='Nombre'></div><div class='4u 12u$(xsmall)'><input type='text'required name='lastName"+counter+"'id='lastName"+counter+"'value=''placeholder='Apellido'></div><div class='4u 12u$(xsmall)'><input type='text'required class='date'name='birth"+counter+"'id='birth"+counter+"'placeholder='Fecha de nac.'></div><div class='4u 12u$(xsmall)'><input type='text'required class='dni'name='dni"+counter+"'id='dni"+counter+"'value=''placeholder='Documento'></div><div class='4u 12u$(xsmall)'><input type='text' name='tel"+counter+"'id='tel"+counter+"'value=''placeholder='Telefono'></div><div class='4u 12u$(xsmall)'><input type='email' name='email"+counter+"'id='email"+counter+"'value=''placeholder='Email'></div></div>")
         $(".newMember").show('slow');
         counter++;
         $(".date").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});

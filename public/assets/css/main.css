@@ -3877,3 +3877,9 @@
     top:7px;
     color:#fff;
 }
+
+.contacto .boxes {
+	width: 49%;
+    display: inline-block;
+    text-align: center;
+}

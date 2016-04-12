@@ -153,34 +153,34 @@ router.post('/', bodyParser.urlencoded({ extended: false }),
         
         socioInstance.save(function (err) {
 
-          if (err) return handleError(err);
-          console.log("grabamos el dato");
+          if (err) res.send(500);
+          console.log("Nuevo socio persistido en DB");
         });
 
- // var transporter = nodemailer.createTransport({
- //        auth: {
- //            pass: process.env.EMAIL_PASS,
- //            user: process.env.EMAIL_ADDRESS,
- //        },
- //        host: "smtp.zoho.com",
- //        port: 465,
- //        secure: true,
- //    });
- //    var mailOptions = {
- //        from: "Contacto <facundod@sdfbarriouno.com.ar>",
- //        html: "Nombre: " + req.body.fullName + "</br> Email: " + req.body.email + "</br> Direccion: " + req.body.address + "</br> Telefono: " + req.body.tel + "</br> Mensaje: " + req.body.message , 
- //        subject: "Nueva peticion de asociacion",
- //        to: "facundodelgado.1@gmail.com",
- //    };
+ var transporter = nodemailer.createTransport({
+        auth: {
+            pass: process.env.EMAIL_PASS,
+            user: process.env.EMAIL_ADDRESS,
+        },
+        host: "smtp.zoho.com",
+        port: 465,
+        secure: true,
+    });
+    var mailOptions = {
+        from: "Contacto <facundod@sdfbarriouno.com.ar>",
+        html: "<p>Apellido: " + req.body.familyName + "</p><p>Apellido: " + req.body.name1 + "</p><p> Email: " + req.body.email + "</p><p> Direccion: " + req.body.address + "</p><p> Telefono: " + req.body.tel + "</p><p> Para mas informacion ingresar al sitio de gestion de socios en : http://cmsbarriouno.herokuapp.com/keystone </p>", 
+        subject: "Nueva peticion de asociacion",
+        to: "facundodelgado.1@gmail.com",
+    };
 
 
- //    transporter.sendMail(mailOptions, function (error, info) {
- //        if (error) {
- //            console.log(error);
- //            res.redirect('/');
- //        }
- //        console.log("Message sent: " + info.response);
- //    });
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            res.send(500);
+        }
+        console.log("Message sent: " + info.response);
+    });
 	
 	res.redirect('/asociacion-correcta');
 
