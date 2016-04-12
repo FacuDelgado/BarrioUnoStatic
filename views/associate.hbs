@@ -9,10 +9,10 @@
 
         <strong>Via web</strong>
 		<p>
-		Para asociarse, le pedimos que complete el formulario de inscripcion online, accediendo desde el siguiente link, en el cual le solicitaremos algunos datos tales como, categoria de socio, datos personales, datos de contacto, etc.
+		Para asociarse, le pedimos que complete el siguiente formulario de inscripcion online, en el cual le solicitaremos algunos datos para comenzar el proceso de asociacion.
 		</p>
         <div style="display: block; text-align: center;">
-            <a style="border-bottom: none;" target="__blank" href="/associateForm"><img style="width: 75px;" src="/public/images/iconoFormulario.png" alt=""><p>Formulario de inscripcion.</p></a>
+            <a style="border-bottom: none;" class="scrolly" target="" href="#formTitle"><img style="width: 75px;" src="/public/images/iconoFormulario.png" alt=""><p>Formulario de inscripcion.</p></a>
             
         </div>
 		<h3>Valor cuota (Anual)</h3>
@@ -46,7 +46,6 @@
                                         </table>
                                     </div>
                                     <br>
-                                    <br>
                                    <p> <strong>Formas de pago</strong></p>
 		
 		<ul>
@@ -58,5 +57,94 @@
 			</li>
 		</ul>
 
+        <br>
+        <h2 id="formTitle">Formulario de inscripcion</h2>
+
+        <form method="post" id="form" action="/associateForm">
+                <div class="row uniform">
+                    <div class="12u$">
+                        <h6>Datos generales:</h6>
+                    </div>
+                    <div class="12u$">
+                        <input type="text" required name="familyName" id="familyName" value="" placeholder="Apellido familiar">
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                        <input type="text" required name="address" id="address" value="" placeholder="Direccion">
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                        <input type="text" required name="tel" id="tel" value="" placeholder="Telefono">
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                        <input type="email" required name="email" id="email" value="" placeholder="Email Familiar">
+                    </div>
+                    <div class="12u$">
+                    <h6>Integrantes:</h6>
+                    </div>
+                    <div class="12u$">
+                       <em><span>1ª integrante</span></em>
+                    </div>
+                    <div class="3u 12u$(xsmall)">
+                        <input type="text" required name="name1" id="name1" value="" placeholder="Nombre">
+                    </div>
+                    <div class="3u 12u$(xsmall)">
+                        <input type="text" required name="lastName1" id="lastName1" value="" placeholder="Apellido">
+                    </div>
+                    <div class="3u 12u$(xsmall)">
+                        <input type="text" required class="date" name="birth1" id="birth1" placeholder="Fecha de nac.">
+                    </div>
+                    <div class="3u 12u$(xsmall)">
+                        <input type="text" required class="dni" name="dni1" id="dni1" value="" placeholder="Documento">
+                    </div>
+                    <div class="row uniform" id="newMembers">
+                        
+                    </div>
+                     <div class="12u$">
+                        <a href="#!" id="addMember">Agregar nuevo integrante +</a>
+                     </div>
+                    <div class="12u$">
+                        <h6>Seleccione categoria de socio:</h6>
+                    </div>
+                     <div class="12u$">
+                            <div class="select-wrapper" required>
+                                <select name="tipoSocio" required id="tipoSocio">
+                                    <option disabled selected value="">Tipo de socio</option>
+                                    <option value="1">Individual</option>
+                                    <option value="1">Grupo familiar</option>
+                                    <option value="1">Benefactor</option>
+                                </select>
+                            </div>
+                    </div>
+                     <div class="12u$">
+                        <ul class="actions">
+                            <li><input type="submit" value="Enviar" class="special"></li>
+                            <li><input type="reset" value="Reset"></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
     </div>
 </section>
+<script type="text/javascript">
+jQuery(function($){
+    $( document ).ready(function() {
+       $(".date").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+
+    });
+});
+   
+counter = 2;
+$("a#addMember").click(function(event){
+    event.preventDefault();
+    if (counter < 9) {
+        $("#newMembers").append("<div class='row uniform newMember' style='display:none;'><div class='12u$'><em><span>"+counter+"ª integrante</span></em></div><div class='4u 12u$(xsmall)'><input type='text' required name='name"+counter+"'id='name"+counter+"'value='' placeholder='Nombre'></div><div class='4u 12u$(xsmall)'><input type='text'required name='lastName"+counter+"'id='lastName"+counter+"'value=''placeholder='Apellido'></div><div class='4u 12u$(xsmall)'><input type='text'required class='date'name='birth"+counter+"'id='birth"+counter+"'placeholder='Fecha de nac.'></div><div class='4u 12u$(xsmall)'><input type='text'required class='dni'name='dni"+counter+"'id='dni"+counter+"'value=''placeholder='Documento'></div><div class='4u 12u$(xsmall)'><input type='text'required name='tel"+counter+"'id='tel"+counter+"'value=''placeholder='Telefono'></div><div class='4u 12u$(xsmall)'><input type='email'required name='email"+counter+"'id='email"+counter+"'value=''placeholder='Email'></div></div>")
+        $(".newMember").show('slow');
+        counter++;
+        $(".date").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
+    }
+    else {
+        $("#addMember").hide();
+        alert('Numero de integrantes maximo');
+    }
+});
+
+</script>
