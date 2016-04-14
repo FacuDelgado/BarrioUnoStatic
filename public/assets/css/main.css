@@ -3879,7 +3879,17 @@
 }
 
 .contacto .boxes {
-	width: 49%;
+	width: 32%;
     display: inline-block;
     text-align: center;
 }
+
+h3.conoce-mas {
+	color: #00FFCC;
+}
+@media screen and (max-width: 1070px) {
+	.contacto .boxes {
+	width: 100%;
+
+}
+	}

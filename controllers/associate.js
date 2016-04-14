@@ -168,9 +168,9 @@ router.post('/', bodyParser.urlencoded({ extended: false }),
     });
     var mailOptions = {
         from: "Contacto <facundod@sdfbarriouno.com.ar>",
-        html: "<p>Apellido: " + req.body.familyName + "</p><p>Apellido: " + req.body.name1 + "</p><p> Email: " + req.body.email + "</p><p> Direccion: " + req.body.address + "</p><p> Telefono: " + req.body.tel + "</p><p> Para mas informacion ingresar al sitio de gestion de socios en : http://cmsbarriouno.herokuapp.com/keystone </p>", 
+        html: "<p>Apellido: " + req.body.familyName + "</p><p>Nombre: " + req.body.name1 + "</p><p> Email: " + req.body.email + "</p><p> Direccion: " + req.body.address + "</p><p> Telefono: " + req.body.tel + "</p><p> Para mas informacion ingresar al sitio de gestion de socios en : http://cmsbarriouno.herokuapp.com/keystone </p>", 
         subject: "Nueva peticion de asociacion",
-        to: "facundodelgado.1@gmail.com",
+        to: "facundodelgado.1@gmail.com, socios@sdfbarriouno.com.ar, jcbottino@infovia.com.ar",
     };
 
 
